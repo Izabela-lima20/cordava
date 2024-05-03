@@ -11,12 +11,18 @@ function consultacep()
         let Campocomplemento = document.querySelector("#complemento")
         let CampoBairro = document.querySelector("#Bairro")
         let Campolocalidade = document.querySelector("#localidade")
+    
+
+
         alert(objetoCEP.uf + " - "+ objetoCEP.localidade)
+
+
 
         CampoEndereço.value = objetoCEP.logradouro
         CampoBairro.value = objetoCEP.bairro
         Campocomplemento.value = objetoCEP.complemento
         Campolocalidade.value = objetoCEP.localidade
+    
 
     }
 }

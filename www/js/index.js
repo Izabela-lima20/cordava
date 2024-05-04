@@ -7,14 +7,15 @@ function consultacep()
     requisicao.send();
     requisicao.onload = function(){
         let objetoCEP = JSON.parse(requisicao.response)
-        let CampoEndereço = document.querySelector("#logradouro")
+        let CampoEndereço = document.querySelector("#cidade")
         let Campocomplemento = document.querySelector("#complemento")
-        let CampoBairro = document.querySelector("#Bairro")
-        let Campolocalidade = document.querySelector("#localidade")
+        let CampoBairro = document.querySelector("#bairro")
+        let Campolocalidade = document.querySelector("#endereco")
+        let Campoestado = document.querySelector("#estado")
     
 
 
-        alert(objetoCEP.uf + " - "+ objetoCEP.localidade)
+        //alert(objetoCEP.uf + " - "+ objetoCEP.localidade)
 
 
 
@@ -22,6 +23,7 @@ function consultacep()
         CampoBairro.value = objetoCEP.bairro
         Campocomplemento.value = objetoCEP.complemento
         Campolocalidade.value = objetoCEP.localidade
+        Campoestado.value = objetoCEP.uf
     
 
     }

@@ -8,7 +8,7 @@ function enviar(){
             "celular": document.querySelector("#celular").value,
             "numero": document.querySelector("#numero").value,
             "cep": document.querySelector("#cep").value,
-            "endereço": document.querySelector("#endereço").value,
+            "endereco": document.querySelector("#endereco").value,
             "bairro": document.querySelector("#bairro").value,
             "cidade": document.querySelector("#cidade").value,
             "estado": document.querySelector("#estado").value,
@@ -17,12 +17,11 @@ function enviar(){
     );
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
-        const myObj = JSON.parse(this.responseText);
-        console.log(myObj);
-        document.getElementById("demo").innerHTML = myObj;
+        console.log(xmlhttp.response)
     }
     xmlhttp.open("POST", "https://etec.fernandograciano.com.br/cadastrocliente.php");
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    console.log(dbParam)
     xmlhttp.send("dados="+dbParam );
 
 }

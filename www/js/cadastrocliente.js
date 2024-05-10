@@ -17,11 +17,11 @@ function enviar(){
     );
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function() {
-        console.log(xmlhttp.response)
+        const myObj = JSON.parse(this.responseText);
+        console.log(myObj);
+        document.getElementById("demo").innerHTML = myObj;
     }
     xmlhttp.open("POST", "https://etec.fernandograciano.com.br/cadastrocliente.php");
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log(dbParam)
     xmlhttp.send("dados="+dbParam );
-
 }

@@ -7,7 +7,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
-   
+
     <link href="css-bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="css/estilo.css" rel="stylesheet" />
     <title>Hello World</title>
@@ -17,11 +17,12 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="input-group mb-3">
-                <input id="cep" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input id="cep" type="text" class="form-control" placeholder="Recipient's username"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                  <button id="botao" class="btn btn-outline-secondary" type="button" id="button-addon2">CEP</button>
+                    <button id="botao" class="btn btn-outline-secondary" type="button" id="button-addon2">CEP</button>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 
@@ -92,8 +93,8 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <button class = "btn btn-success" onclick="enviar()">
-            salvar dados
+            <button class="btn btn-success" onclick="enviar()">
+                salvar dados
             </button>
         </div>
 
@@ -102,18 +103,39 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <button class = "btn btn-warning" onclick="lerclientes()">
-           ler clientes
+            <button class="btn btn-warning" onclick="lerclientes()">
+                ler clientes
             </button>
         </div>
 
+        </button>
     </div>
-    </div>
+    </div> 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Celular</th>
+            </tr>
+        </thead>
+        <tbody id="corpotabela"></tbody>
+    </table>
+<button class="btn btn-danger" onclick="salvarLocal('nome', 'Izabela')">
+    Cadastro no LocalStoreage
+</button>
+<br>
+<br>
+<button class="btn btn-warning" onclick="lerLocal()">
+Ler Storeage
+</button>
+
 
     <script src="js-bootstrap/bootstrap.bundle.js"></script>
     <script src="js/index.js"></script>
     <script src="js/cadastrocliente.js"></script>
-    <script src = "js/lerclientes.js"></script>
+    <script src="js/lerclientes.js"></script>
+    <script src="js/armazenar.js"></script>
 </body>
 
 </html>

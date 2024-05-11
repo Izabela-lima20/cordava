@@ -12,4 +12,5 @@ function lerLocal()
     console.log(localStorage.getItem("idade"))
     console.log(localStorage.getItem("ListaPridutos"))
     console.log(localStorage.getItem("Id_usuario"))
+    console.log( localStorage.getItem("Nome") )
 }

@@ -1,28 +1,23 @@
-function consultaCep() {
+function consultaCep()
+{
     let campo = document.querySelector("#cep");
     let requisicao = new XMLHttpRequest();
-    let url = "https://viacep.com.br/ws/" + campo.value + "/json/";
+    let url = "https://viacep.com.br/ws/"+ campo.value +"/json/";
     requisicao.open("GET", url);
     requisicao.send();
-    requisicao.onload = function () {
-
+    requisicao.onload = function(){
         let objetoCEP = JSON.parse(requisicao.response)
-        let CampoEndereço = document.querySelector("#cidade")
-        let Campocomplemento = document.querySelector("#complemento")
-        let CampoBairro = document.querySelector("#bairro")
-        let Campolocalidade = document.querySelector("#endereco")
-        let Campoestado = document.querySelector("#estado")
-
+        let campoEndereco = document.querySelector("#logradouro")
+        let campoCidade = document.querySelector("#cidade")
+        let campoBairro = document.querySelector("#bairro")
+        let campoEstado = document.querySelector("#estado")
         console.log(requisicao.response)
-
-        CampoEndereço.value = objetoCEP.logradouro
-        CampoBairro.value = objetoCEP.bairro
-        Campocomplemento.value = objetoCEP.complemento
-        Campolocalidade.value = objetoCEP.localidade
-        Campoestado.value = objetoCEP.uf
-
-
-    }
+        campoEndereco.value = objetoCEP.logradouro
+        campo.value = objetoCEP.cep
+        campoCidade.value = objetoCEP.localidade
+        campoBairro.value = objetoCEP.bairro
+        campoEstado.value = objetoCEP.uf
+    } 
 }
 let botao = document.querySelector("#botao");
-botao.addEventListener("click", consultacep);
+botao.addEventListener("click",consultaCep);

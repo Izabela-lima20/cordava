@@ -1,4 +1,4 @@
-function enviar(){
+function enviar() {
 
 
     const dbParam = JSON.stringify(
@@ -16,12 +16,15 @@ function enviar(){
         }
     );
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
-        const myObj = JSON.parse(this.responseText);
-        console.log(myObj);
-        document.getElementById("demo").innerHTML = myObj;
+    xmlhttp.onload = function () {
+        if (xmlhttp.response == 1) {
+            alert("Cadastrado com sucesso")
+        } else {
+            alert("Falha ao cadastrar. Consulte o console")
+        }
+        console.log(xmlhttp.response)
     }
     xmlhttp.open("POST", "https://etec.fernandograciano.com.br/cadastrocliente.php");
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("dados="+dbParam );
+    xmlhttp.send("dados=" + dbParam);
 }
